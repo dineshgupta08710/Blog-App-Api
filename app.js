@@ -27,10 +27,10 @@
 
 
  //## Importing  files from another folder
-const userRoute = require('./Blog App/routes/user');
-const categoryRoute = require('./Blog App/routes/category');
-const blogRoute = require('./Blog App/routes/blog');
-const commentRoute = require('./Blog App/routes/comment');
+const userRoute = require('./routes/user');
+const categoryRoute = require('./routes/category');
+const blogRoute = require('./routes/blog');
+const commentRoute = require('./routes/comment');
 
 app.use('/user',userRoute);
 app.use('/category',categoryRoute);
