@@ -3,6 +3,16 @@
  const mongoose = require('mongoose');
  const bodyParser = require('body-parser')
 
+ const cors = require('cors');
+ app.use(cors());
+
+ const corsConfig = {
+   origin:"*",
+   Credential: true,
+   methods:["GET","POST","PUT","DELETE"]
+ }
+
+ app.options("",cors(corsConfig));
 
  // connecting to database
  // '#' char in url =>  %23
@@ -17,10 +27,10 @@
 
 
  //## Importing  files from another folder
-const userRoute = require('../Blog App/routes/user');
-const categoryRoute = require('../Blog App/routes/category');
-const blogRoute = require('../Blog App/routes/blog');
-const commentRoute = require('../Blog App/routes/comment');
+const userRoute = require('./Blog App/routes/user');
+const categoryRoute = require('./Blog App/routes/category');
+const blogRoute = require('./Blog App/routes/blog');
+const commentRoute = require('./Blog App/routes/comment');
 
 app.use('/user',userRoute);
 app.use('/category',categoryRoute);
